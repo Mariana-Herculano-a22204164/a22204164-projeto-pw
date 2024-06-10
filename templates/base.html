@@ -50,6 +50,17 @@
                             </div>
                         </li>
                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                        {% endif %}
+                        </ul>
                     <button class="btn btn-outline-light" id="toggle-dark-mode">Toggle Dark Mode</button>
                 </div>
             </div>
