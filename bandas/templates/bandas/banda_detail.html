@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ banda.nome }}{% endblock %}
+{% block content %}
+<h1>{{ banda.nome }}</h1>
+<img src="{{ banda.foto.url }}" alt="Foto de {{ banda.nome }}" style="height: 200px; width: auto;">
+<h3>Nacionalidade: {{ banda.nacionalidade }} - Ano Criado: {{ banda.ano_criado }}</h3>
+{% if user.is_authenticated and is_editor %}
+<div class="btn-group" role="group">
+    <a href="{% url 'bandas:banda_edit' banda.id %}" class="btn btn-secondary">Edit</a>
+    <a href="{% url 'bandas:banda_delete' banda.id %}" class="btn btn-danger"
+        onclick="return confirm('Tem a certeza?');">Delete</a>
+    <a href="{% url 'bandas:album_create' %}" class="btn btn-primary">Create Album</a>
+</div>
+{% endif %}
+<h2>Albuns:</h2>
+<ul>
+    {% for album in albums %}
+    <li><a href="{% url 'bandas:album_detail' album.id %}">{{ album.nome }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

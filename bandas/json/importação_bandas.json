@@ -1,0 +1,331 @@
+[
+    {
+        "band": "Led Zeppelin",
+        "title": "Led Zeppelin IV",
+        "year_release": 1971,
+        "songs": [
+            {
+                "title": "Stairway to Heaven",
+                "duration": "8:02"
+            },
+            {
+                "title": "Black Dog",
+                "duration": "4:55"
+            },
+            {
+                "title": "Rock and Roll",
+                "duration": "3:40"
+            },
+            {
+                "title": "Going to California",
+                "duration": "3:31"
+            },
+            {
+                "title": "When the Levee Breaks",
+                "duration": "7:07"
+            }
+        ]
+    },
+    {
+        "band": "Queen",
+        "title": "A Night at the Opera",
+        "year_release": 1975,
+        "songs": [
+            {
+                "title": "Bohemian Rhapsody",
+                "duration": "5:55"
+            },
+            {
+                "title": "You're My Best Friend",
+                "duration": "2:52"
+            },
+            {
+                "title": "Love of My Life",
+                "duration": "3:38"
+            },
+            {
+                "title": "I'm in Love with My Car",
+                "duration": "3:05"
+            },
+            {
+                "title": "The Prophet's Song",
+                "duration": "8:21"
+            }
+        ]
+    },
+    {
+        "band": "The Rolling Stones",
+        "title": "Let It Bleed",
+        "year_release": 1969,
+        "songs": [
+            {
+                "title": "Gimme Shelter",
+                "duration": "4:31"
+            },
+            {
+                "title": "Let It Bleed",
+                "duration": "5:27"
+            },
+            {
+                "title": "Love in Vain",
+                "duration": "4:19"
+            },
+            {
+                "title": "Midnight Rambler",
+                "duration": "6:52"
+            },
+            {
+                "title": "You Can't Always Get What You Want",
+                "duration": "7:28"
+            }
+        ]
+    },
+    {
+        "band": "Pink Floyd",
+        "title": "The Dark Side of the Moon",
+        "year_release": 1973,
+        "songs": [
+            {
+                "title": "Speak to Me",
+                "duration": "1:30"
+            },
+            {
+                "title": "Breathe",
+                "duration": "2:43"
+            },
+            {
+                "title": "Time",
+                "duration": "6:53"
+            },
+            {
+                "title": "Money",
+                "duration": "6:30"
+            },
+            {
+                "title": "Us and Them",
+                "duration": "7:51"
+            }
+        ]
+    },
+    {
+        "band": "The Beatles",
+        "title": "Abbey Road",
+        "year_release": 1969,
+        "songs": [
+            {
+                "title": "Come Together",
+                "duration": "4:20"
+            },
+            {
+                "title": "Something",
+                "duration": "3:03"
+            },
+            {
+                "title": "Maxwell's Silver Hammer",
+                "duration": "3:27"
+            },
+            {
+                "title": "Oh! Darling",
+                "duration": "3:27"
+            },
+            {
+                "title": "I Want You (She's So Heavy)",
+                "duration": "7:47"
+            }
+        ]
+    },
+    {
+        "band": "AC/DC",
+        "title": "Back in Black",
+        "year_release": 1980,
+        "songs": [
+            {
+                "title": "Hells Bells",
+                "duration": "5:12"
+            },
+            {
+                "title": "Shoot to Thrill",
+                "duration": "5:17"
+            },
+            {
+                "title": "Back in Black",
+                "duration": "4:14"
+            },
+            {
+                "title": "You Shook Me All Night Long",
+                "duration": "3:30"
+            },
+            {
+                "title": "Rock and Roll Ain't Noise Pollution",
+                "duration": "4:15"
+            }
+        ]
+    },
+    {
+        "band": "Guns N' Roses",
+        "title": "Appetite for Destruction",
+        "year_release": 1987,
+        "songs": [
+            {
+                "title": "Welcome to the Jungle",
+                "duration": "4:31"
+            },
+            {
+                "title": "Sweet Child o' Mine",
+                "duration": "5:55"
+            },
+            {
+                "title": "Paradise City",
+                "duration": "6:46"
+            },
+            {
+                "title": "Nightrain",
+                "duration": "4:26"
+            },
+            {
+                "title": "Mr. Brownstone",
+                "duration": "3:49"
+            }
+        ]
+    },
+    {
+        "band": "Nirvana",
+        "title": "Nevermind",
+        "year_release": 1991,
+        "songs": [
+            {
+                "title": "Smells Like Teen Spirit",
+                "duration": "5:01"
+            },
+            {
+                "title": "In Bloom",
+                "duration": "4:15"
+            },
+            {
+                "title": "Come as You Are",
+                "duration": "3:39"
+            },
+            {
+                "title": "Lithium",
+                "duration": "4:17"
+            },
+            {
+                "title": "Polly",
+                "duration": "2:56"
+            }
+        ]
+    },
+    {
+        "band": "The Who",
+        "title": "Who's Next",
+        "year_release": 1971,
+        "songs": [
+            {
+                "title": "Baba O'Riley",
+                "duration": "5:08"
+            },
+            {
+                "title": "Bargain",
+                "duration": "5:33"
+            },
+            {
+                "title": "Behind Blue Eyes",
+                "duration": "3:42"
+            },
+            {
+                "title": "Going Mobile",
+                "duration": "3:42"
+            },
+            {
+                "title": "Won't Get Fooled Again",
+                "duration": "8:32"
+            }
+        ]
+    },
+    {
+        "band": "Metallica",
+        "title": "Metallica (The Black Album)",
+        "year_release": 1991,
+        "songs": [
+            {
+                "title": "Enter Sandman",
+                "duration": "5:29"
+            },
+            {
+                "title": "Sad but True",
+                "duration": "5:24"
+            },
+            {
+                "title": "The Unforgiven",
+                "duration": "6:26"
+            },
+            {
+                "title": "Nothing Else Matters",
+                "duration": "6:29"
+            },
+            {
+                "title": "Wherever I May Roam",
+                "duration": "6:44"
+            }
+        ]
+    }
+]
+PS C:\Users\maria> & C:/Users/maria/AppData/Local/Programs/Python/Python312/python.exe c:/Users/maria/OneDrive/Documentos/import.py
+Traceback (most recent call last):
+  File "c:\Users\maria\OneDrive\Documentos\import.py", line 15, in <module>
+    rock_bands_json = json.dumps(rock_bands, indent=4)
+                      ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'?
+PS C:\Users\maria> & C:/Users/maria/AppData/Local/Programs/Python/Python312/python.exe c:/Users/maria/OneDrive/Documentos/import.py
+[
+    {
+        "name": "Led Zeppelin",
+        "nationality": "British",
+        "year_created": 1968
+    },
+    {
+        "name": "Queen",
+        "nationality": "British",
+        "year_created": 1970
+    },
+    {
+        "name": "The Rolling Stones",
+        "nationality": "British",
+        "year_created": 1962
+    },
+    {
+        "name": "Pink Floyd",
+        "nationality": "British",
+        "year_created": 1965
+    },
+    {
+        "name": "The Beatles",
+        "nationality": "British",
+        "year_created": 1960
+    },
+    {
+        "name": "AC/DC",
+        "nationality": "Australian",
+        "year_created": 1973
+    },
+    {
+        "name": "Guns N' Roses",
+        "nationality": "American",
+        "year_created": 1985
+    },
+    {
+        "name": "Nirvana",
+        "nationality": "American",
+        "year_created": 1987
+    },
+    {
+        "name": "The Who",
+        "nationality": "British",
+        "year_created": 1964
+    },
+    {
+        "name": "Metallica",
+        "nationality": "American",
+        "year_created": 1981
+    }
+]

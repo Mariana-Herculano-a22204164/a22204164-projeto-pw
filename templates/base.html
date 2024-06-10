@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="{% if request.COOKIES.night_mode == 'true' %}dark-mode{% endif %}">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'portfolio:landing_page' %}">Inicio</a>
+                <button class="navbar-toggler" id="navbar-toggler">☰</button>
+                <div class="navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'portfolio:about_page' %}">MeByMe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'portfolio:techtools_page' %}">TechTools</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="bandasDropdown">Bandas</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'bandas:bandas_list' %}">Lista de Bandas</a>
+                                <a href="{% url 'bandas:banda_create' %}">Criar Banda</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="artigosDropdown">Artigos</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'artigos:lista_artigos' %}">Lista de Artigos</a>
+                                <a href="{% url 'artigos:artigo_create' %}">Criar Artigo</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="cursosDropdown">Cursos</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'curso:cursos_list' %}">Lista de Cursos</a>
+                                <a href="{% url 'curso:curso_create' %}">Criar Curso</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="meteoDropdown">Meteo</a>
+                            <div class="dropdown-content">
+                                <a href="{% url 'meteo:weather_today_lisbon' %}">Weather Today</a>
+                                <a href="{% url 'meteo:weather_next_5_days' %}">Next 5 Days</a>
+                                <a href="{% url 'meteo:api_description' %}">API Description</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-light" id="toggle-dark-mode">Toggle Dark Mode</button>
+                </div>
+            </div>
+        </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        <p>2024</p>
+    </footer>
+
+    <script>
+        document.getElementById('toggle-dark-mode').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            document.cookie = `night_mode=${isDarkMode}; path=/`;
+        });
+
+        document.getElementById('navbar-toggler').addEventListener('click', function() {
+            document.getElementById('navbarNav').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

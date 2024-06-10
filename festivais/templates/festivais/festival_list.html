@@ -1,0 +1,22 @@
+{% extends 'festivais/layout.html' %}
+
+{% block content %}
+    <h2>Lista de Festivais</h2>
+    {% if festivais %}
+        <ul>
+            {% for festival in festivais %}
+                <li>
+                    <a href="{% url 'festivais:detalhes_festival' festival.id %}"><strong>{{ festival.nome }}</strong></a><br>
+                    Localização: {{ festival.localizacao.nome }}<br>
+                    <ul>
+                        {% for banda in festival.bandas.all %}
+                            <li>{{ banda.nome }} - {{ banda.genero }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há festivais.</p>
+    {% endif %}
+{% endblock %}

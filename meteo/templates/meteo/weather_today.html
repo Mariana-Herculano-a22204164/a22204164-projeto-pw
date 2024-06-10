@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load get_filter %}
+
+{% block content %}
+<div class="weather-container">
+    <h2>Previsão Meteorológica para Hoje em Lisboa</h2>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% else %}
+    <div class="weather-info">
+        <p><strong>Cidade:</strong> {{ city }}</p>
+        <p><strong>Temperatura Mínima:</strong> {{ min_temp }}°C</p>
+        <p><strong>Temperatura Máxima:</strong> {{ max_temp }}°C</p>
+        <p><strong>Data:</strong> {{ date }}</p>
+        <p><strong>Descrição do Tempo:</strong> {{ weather_description }}</p>
+        <a href="{% static 'meteo/' %}w_ic_d_{{ id_weather_type|stringformat:'02d' }}.svg">
+            <img src="{% static 'meteo/' %}w_ic_d_{{ id_weather_type|stringformat:'02d' }}.svg" id='weather-icon' width="6%" alt="Weather Icon">
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const updateWeatherIcon = () => {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const weatherIcon = document.getElementById('weather-icon');
+            const iconType = isDarkMode ? 'n' : 'd';
+            weatherIcon.innerHTML = `<img src="{% static 'meteo/' %}w_ic_n_{{ id_weather_type|stringformat:'02d' }}.svg" id='weather-icon' width="6%" alt="Weather Icon">`;
+        };
+
+        updateWeatherIcon();
+    });
+</script>
+{% endblock %}

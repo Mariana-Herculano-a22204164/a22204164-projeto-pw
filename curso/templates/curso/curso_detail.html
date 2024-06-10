@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ curso.nome }}</h1>
+<p><strong>Apresentação:</strong> {{ curso.apresentacao }}</p>
+<p><strong>Objetivos:</strong> {{ curso.objetivos }}</p>
+<p><strong>Competências:</strong> {{ curso.competencias }}</p>
+{% if is_editor %}
+<a href="{% url 'curso:curso_edit' curso.id %}" class="btn btn-secondary">Editar</a>
+<a href="{% url 'curso:curso_delete' curso.id %}" class="btn btn-danger">Apagar</a>
+{% endif %}
+<h2>Disciplinas</h2>
+<ul>
+    {% for disciplina in disciplinas %}
+    <li><a href="{% url 'curso:disciplina_detail' disciplina.id %}">{{ disciplina.nome }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

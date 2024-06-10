@@ -1,0 +1,15 @@
+{% extends 'festivais/layout.html' %}
+
+{% block content %}
+    <h1>Detalhes do Festival: {{ festival.nome }}</h1>
+    <p>Data Inicio: {{ festival.data_inicio }}</p>
+    <p>Data Fim: {{ festival.data_fim }}</p>
+    <p>Localizacao: {{ festival.localizacao.nome }}, {{ festival.localizacao.cidade }}, {{ festival.localizacao.pais }}</p>
+    <img src='{{festival.foto.url}}'/>
+    <h2>Bandas:</h2>
+    <ul>
+        {% for banda in festival.bandas.all %}
+            <li>{{ banda.nome }} - {{ banda.genero }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

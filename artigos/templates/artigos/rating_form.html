@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{% if rating %} Editar Avaliação {% else %} Criar Avaliação {% endif %}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">{% if rating %} Editar {% else %} Criar {% endif %}</button>
+</form>
+{% endblock %}

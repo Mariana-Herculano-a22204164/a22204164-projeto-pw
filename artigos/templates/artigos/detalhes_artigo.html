@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}{{ artigo.titulo }}{% endblock %}
+{% block content %}
+<h2>{{ artigo.titulo }}</h2>
+<p>{{ artigo.conteudo }}</p>
+<p><small>Publicado por {{ artigo.autor.username }} em {{ artigo.data_publicada }}</small></p>
+
+{% if is_editor %}
+<a href="{% url 'artigos:artigo_edit' artigo.id %}" class="btn btn-secondary">Editar</a>
+<a href="{% url 'artigos:artigo_delete' artigo.id %}" class="btn btn-danger">Apagar</a>
+{% endif %}
+
+<h4>Comentários</h4>
+{% for comentario in artigo.comentarios_artigos.all %}
+<div class="card mb-2">
+    <div class="card-body">
+        <p class="card-text">{{ comentario.conteudo }}</p>
+        <p class="card-subtitle mb-2 text-muted">por {{ comentario.autor.username }}</p>
+        {% if is_editor %}
+        <a href="{% url 'artigos:comment_edit' comentario.id %}" class="btn btn-secondary">Editar</a>
+        <a href="{% url 'artigos:comment_delete' comentario.id %}" class="btn btn-danger">Apagar</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<h4>Ratings</h4>
+{% for rating in artigo.ratings_artigos.all %}
+<div class="card mb-2">
+    <div class="card-body">
+        <p class="card-text">{{ rating.score }}</p>
+        <p class="card-subtitle mb-2 text-muted">por {{ rating.user.username }}</p>
+        {% if is_editor %}
+        <a href="{% url 'artigos:rating_edit' rating.id %}" class="btn btn-secondary">Editar</a>
+        <a href="{% url 'artigos:rating_delete' rating.id %}" class="btn btn-danger">Apagar</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<h4>Avalie este artigo</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ rating_form.as_p }}
+    <button type="submit" name="rating" class="btn btn-primary">Avaliar</button>
+</form>
+
+<h4>Deixe um comentário</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <button type="submit" name="comentario" class="btn btn-primary">Comentar</button>
+</form>
+{% endblock %}

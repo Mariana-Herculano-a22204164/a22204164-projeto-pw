@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Artigos{% endblock %}
+{% block content %}
+<div class="list-group">
+    {% for artigo in artigos%}
+    <a href="{% url 'artigos:detalhes_artigo' artigo.id %}" class="list-group-item list-group-item-action">
+        {{ artigo.titulo}}
+        <small>por {{ artigo.autor.username }}</small>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

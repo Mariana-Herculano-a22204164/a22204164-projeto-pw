@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ disciplina.nome }}</h1>
+<p><strong>Ano:</strong> {{ disciplina.ano }}</p>
+<p><strong>Semestre:</strong> {{ disciplina.semestre }}</p>
+<p><strong>ECTS:</strong> {{ disciplina.ects }}</p>
+<p><strong>Área Científica:</strong> {{ disciplina.area_cientifica.nome }}</p>
+{% if is_editor %}
+<a href="{% url 'curso:disciplina_edit' curso.id %}" class="btn btn-secondary">Editar</a>
+<a href="{% url 'curso:disciplina_delete' curso.id %}" class="btn btn-danger">Apagar</a>
+{% endif %}
+{% if projeto %}
+<h2>Projeto Associado</h2>
+<p><a href="{% url 'curso:projeto_detail' projeto.id %}">{{ projeto.nome }}</a></p>
+{% else %}
+<p>Sem projeto associado.</p>
+{% endif %}
+{% endblock %}

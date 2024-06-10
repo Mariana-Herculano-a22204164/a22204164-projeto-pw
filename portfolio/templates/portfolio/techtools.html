@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}TechTools{% endblock %}
+
+{% block content %}
+<div class="parallax-container" style="background-image: url('{% static "images/tech-bg.jpg" %}');">
+    <div class="parallax-content">
+        <h2>TechTools</h2>
+        <p>Bem-vindo à minha página de apresentação! Aqui, encontrará uma visão geral das tecnologias utilizadas neste projeto.</p>
+    </div>
+</div>
+
+<div class="content-container">
+    <h3>Tecnologias Utilizadas</h3>
+    <div class="tech-grid">
+        <div class="tech-item">Python</div>
+        <div class="tech-item">Django</div>
+        <div class="tech-item">HTML</div>
+        <div class="tech-item">CSS</div>
+        <div class="tech-item">JavaScript</div>
+        <div class="tech-item">SQLite</div>
+    </div>
+
+    <h3>Vídeos</h3>
+    <div class="video-grid">
+        <div class="video-item">
+            <h4>Django Hands-On</h4>
+            <video controls>
+                <source src="{% static 'videos/django_hands_on.mp4' %}" type="video/mp4">
+                O seu browser não suporta este vídeo.
+            </video>
+        </div>
+        <div class="video-item">
+            <h4>Visita Guiada ao Projeto</h4>
+            <video controls>
+                <source src="{% static 'videos/project_tour.mp4' %}" type="video/mp4">
+                O seu browser não suporta este vídeo.
+            </video>
+        </div>
+    </div>
+
+</div>
+
+<div class="parallax-container" style="background-image: url('{% static "images/tech-bg.jpg" %}');">
+    <div class="parallax-content">
+        <h2>Mais Tecnologias</h2>
+        <p>Explore mais tecnologias utilizadas no desenvolvimento deste projeto.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ musica.nome }}{% endblock %}
+{% block content %}
+<h1>{{ musica.nome }}</h1>
+<p>Ano: {{ musica.ano_criado }} - Duração: {{ musica.duracao }}</p>
+<a href="{{ musica.link }}">Ouvir Música</a>
+{% if user.is_authenticated and is_editor %}
+<a href="{% url 'bandas:musica_edit' musica.id %}" class="btn btn-secondary">Edit</a>
+<form action="{% url 'bandas:musica_delete' musica.id %}" method="post" style="display: inline;"
+    onsubmit="return confirm('Tem a certeza?');">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+{% endif %}
+{% endblock %}

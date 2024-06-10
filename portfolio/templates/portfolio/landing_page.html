@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Landing Page{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>Bem-vindo ao Meu Website</h1>
+        <p>Explore as minhas aplicações e projetos</p>
+        <div id="weather-icon"></div>
+        <a href="{% url 'portfolio:about_page' %}" class="btn btn-primary">Sobre Mim</a>
+        <div id="clock"></div>
+    </div>
+</div>
+
+<script>
+    function updateWeatherIcon(cityId) {
+        fetch(`localhost/meteo/api/weather/today/${cityId}`)
+            .then(response => response.json())
+            .then(data => {
+                const weatherIcon = document.getElementById('weather-icon');
+                weatherIcon.innerHTML = `<img src="{% static 'meteo/' %}w_ic_d_${data.idWeatherType.toString().padStart(2, '0')}.svg" width="6%" alt="Weather Icon">`;
+            });
+    }
+
+    function getCityId(latitude, longitude) {
+        fetch(`localhost/meteo/api/cities/`)
+            .then(response => response.json())
+            .then(cities => {
+                let closestCity = null;
+                let minDistance = Infinity;
+
+                cities.data.forEach(city => {
+                    const distance = Math.sqrt(
+                        Math.pow(city.latitude - latitude, 2) + Math.pow(city.longitude - longitude, 2)
+                    );
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        closestCity = city;
+                    }
+                });
+
+                if (closestCity) {
+                    updateWeatherIcon(closestCity.globalIdLocal);
+                }
+            });
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                getCityId(latitude, longitude);
+            });
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getLocation();
+    });
+</script>
+{% endblock %}

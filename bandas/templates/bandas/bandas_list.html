@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Bandas{% endblock %}
+{% block content %}
+<h1>Bandas</h1>
+{% if user.is_authenticated and is_editor %}
+    <a href="{% url 'bandas:banda_create' %}" class="btn btn-primary">Adicionar Banda</a>
+{% endif %}
+<ul>
+    {% for banda in bandas %}
+        <li>
+            <a href="{% url 'bandas:banda_detail' banda.id %}">{{ banda.nome }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

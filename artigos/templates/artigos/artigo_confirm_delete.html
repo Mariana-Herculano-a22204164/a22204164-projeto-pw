@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Apagar Artigo</h1>
+<p>De certeza que quer apagar o artigo?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'artigos:detalhes_artigo' artigo.id %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

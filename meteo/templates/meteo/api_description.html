@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="api-container">
+    <h2>API Meteo</h2>
+    <p>Esta API fornece informações meteorológicas para várias cidades.</p>
+
+    <h3>Endpoints</h3>
+    <ul>
+        <li>
+            <h4>Lista de Cidades</h4>
+            <p><strong>URL:</strong> /meteo/api/cities/</p>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Descrição:</strong> Retorna a lista de cidades para as quais existem previsões meteorológicas.</p>
+        </li>
+        <li>
+            <h4>Previsão Meteorológica de Hoje para uma Cidade</h4>
+            <p><strong>URL:</strong> /meteo/api/weather/today/&lt;city_id&gt;/</p>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Descrição:</strong> Retorna a previsão meteorológica de hoje para a cidade especificada.</p>
+            <p><strong>Parâmetros:</strong></p>
+            <ul>
+                <li><strong>city_id:</strong> O ID da cidade.</li>
+            </ul>
+        </li>
+        <li>
+            <h4>Previsão Meteorológica para os Próximos 5 Dias para uma Cidade</h4>
+            <p><strong>URL:</strong> /meteo/api/weather/next-5-days/&lt;city_id&gt;/</p>
+            <p><strong>Método:</strong> GET</p>
+            <p><strong>Descrição:</strong> Retorna a previsão meteorológica para os próximos 5 dias para a cidade especificada.</p>
+            <p><strong>Parâmetros:</strong></p>
+            <ul>
+                <li><strong>city_id:</strong> O ID da cidade.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+{% endblock %}

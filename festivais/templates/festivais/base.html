@@ -1,0 +1,28 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Festivais{% endblock %}</title>
+    <!-- Adicione links para seus arquivos de estilo CSS aqui -->
+</head>
+<body>
+
+<header>
+    <h1>Festivais</h1>
+</header>
+
+<main>
+    {% block content %}
+    <!-- O conteúdo específico de cada página será inserido aqui -->
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024</p>
+</footer>
+
+</body>
+</html>

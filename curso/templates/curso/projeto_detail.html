@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ projeto.nome }}</h1>
+<p><strong>Descrição:</strong> {{ projeto.descricao }}</p>
+<p><strong>Conceitos Aplicados:</strong> {{ projeto.conceitos_aplicados }}</p>
+<p><strong>Tecnologias Usadas:</strong> {{ projeto.tecnologias_usadas }}</p>
+<img src="{{ projeto.imagem_url }}" alt="Image of {{ projeto.nome }}" style="width:100%; max-width:600px;">
+<a href="{{ projeto.link_video }}">Video Link</a><br>
+<a href="{{ projeto.link_github }}">GitHub Link</a>
+{% if is_editor %}
+<a href="{% url 'curso:projeto_edit' curso.id %}" class="btn btn-secondary">Editar</a>
+<a href="{% url 'curso:projeto_delete' curso.id %}" class="btn btn-danger">Apagar</a>
+{% endif %}
+{% endblock %}

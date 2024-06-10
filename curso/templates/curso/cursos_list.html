@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List of Cursos</h1>
+{% if is_editor %}
+<a href="{% url 'curso:curso_create' %}" class="btn btn-primary">Adicionar Curso</a>
+{% endif %}
+<ul>
+    {% for curso in cursos %}
+    <li>
+        <a href="{% url 'curso:curso_detail' curso.id %}">{{ curso.nome }}</a>
+        - <small>{{ curso.apresentacao|truncatewords:10 }}</small>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
